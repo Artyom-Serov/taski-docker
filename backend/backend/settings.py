@@ -1,16 +1,14 @@
 import os
 from pathlib import Path
-from decouple import config, Csv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = os.getenv('DEBUG') == 'True'
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='', cast=Csv())
-
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
 
 # Application definition
 
