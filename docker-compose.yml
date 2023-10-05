@@ -21,6 +21,8 @@ services:
   
   # Имя и описание контейнера с бэкендом
   backend:
+    depends_on:
+      - db
     # Из какого Dockerfile собирать образ для этого контейнера:
     build: ./backend/
     env_file: .env
