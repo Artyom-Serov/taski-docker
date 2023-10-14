@@ -19,7 +19,8 @@ DEBUG = os.getenv('DEBUG') == 'True'
 # DEBUG: bool = os.getenv('DEBUG') == 'True'
 # ALLOWED_HOSTS = ['130.193.34.161', '127.0.0.1', 'localhost', 'purposes.sytes.net']
 # ALLOWED_HOSTS: list[str] = os.getenv('ALLOWED_HOSTS', 'localhost').split(',')
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=[])
 
 # Application definition
 
